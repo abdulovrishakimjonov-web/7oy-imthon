@@ -1,8 +1,6 @@
 import { Button, Carousel } from "antd";
 import { useState } from "react";
-import flower1 from "../assets/images/flower1.png";
-import heroflower1 from "../assets/images/heroflower1.png";
-import heroflower2 from "../assets/images/heroflower2.png";
+import flover2 from "../assets/images/flover-2.png";
 
 const Showcase = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -12,44 +10,45 @@ const Showcase = () => {
     color: "#fff",
     lineHeight: "160px",
     textAlign: "center",
-    background: "#F5F5F5",
+    background: "#F0FDF4",
+    // opacity: "50%"
   };
 
   const slides = [
     {
       id: 1,
       subTitle: "WELCOME TO GREENSHOP",
-      title: "LET'S MAKE A BETTER",
+      title: "LET'S MAKE A BATTER",
       highlight: "PLANET",
       description:
         "We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an unique Urban Jungle. Order your favorite plants!",
       buttonText: "SHOP NOW",
-      image: flower1,
+      image: flover2,
     },
     {
       id: 2,
       subTitle: "WELCOME TO GREENSHOP",
-      title: "LET'S LIVE IN A BETTER",
+      title: "LET'S MAKE A BATTER",
       highlight: "PLANET",
       description:
         "We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an unique Urban Jungle. Order your favorite plants!",
-      buttonText: "LET'S START",
-      image: heroflower1,
+      buttonText: "SHOP NOW",
+      image: flover2,
     },
     {
       id: 3,
       subTitle: "WELCOME TO GREENSHOP",
-      title: "LET'S OBSERVE A BETTER",
+      title: "LET'S MAKE A BATTER",
       highlight: "PLANET",
       description:
         "We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an unique Urban Jungle. Order your favorite plants!",
-      buttonText: "GET CREDITS",
-      image: heroflower2,
+      buttonText: "SHOP NOW",
+      image: flover2,
     },
   ];
 
   return (
-    <div className="w-[95%] max-w-[1550px] md:w-[90%] m-auto mt-4 rounded-2xl md:rounded-3xl overflow-hidden relative bg-[#F5F5F5]">
+    <div className=" max-w-[1200px] md:w-[90%] m-auto mt-4 rounded-md md:rounded-md overflow-hidden relative bg-[#F5F5F5]">
       <Carousel
         dots={false}
         autoplay
@@ -70,16 +69,16 @@ const Showcase = () => {
                   {slide.subTitle}
                 </p>
 
-                <h1 className="font-family text-[#3d3d3d] font-black text-[28px] sm:text-[50px] xl:text-[70px] leading-[110%] uppercase">
+                <h1 className="font-family text-[#272727] font-black text-[28px] sm:text-[50px] xl:text-[70px] leading-[110%] uppercase">
                   {slide.title}{" "}
-                  <span className="text-[#46A358]">{slide.highlight}</span>
+                  <span className="text-[#14532D]">{slide.highlight}</span>
                 </h1>
                 <p className="text-[#727272] text-[12px] sm:text-[14px] w-[95%] md:w-[80%] mb-4 md:mb-6 leading-5 sm:leading-6">
                   {slide.description}
                 </p>
                 <Button
                   type="primary"
-                  className="bg-[#46a358]! md:mb-0! mb-3! hover:bg-[#357a40]! w-35! h-10! rounded-md! font-family! font-bold! text-[14px]! md:text-[16px]! leading-[125%]! uppercase! text-[#fff]!"
+                  className="bg-[#14532D]! md:mb-0! mb-3! hover:bg-[#166534]! w-35! h-10! rounded-md! font-family! font-bold! text-[14px]! md:text-[16px]! leading-[125%]! uppercase! text-[#FFFFFF]!"
                 >
                   {slide.buttonText}
                 </Button>

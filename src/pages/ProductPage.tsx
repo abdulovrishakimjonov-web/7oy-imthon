@@ -40,7 +40,7 @@ const ProductPage = () => {
   const currentImage = selectedImage || product.main_image;
 
   return (
-    <div className="w-[90%] max-w-[1550px] m-auto mt-10 mb-20">
+    <div className="max-w-[1200px] m-auto mt-10 mb-20">
       <div className="mb-10 text-sm">
         <span
           onClick={() => navigate("/")}

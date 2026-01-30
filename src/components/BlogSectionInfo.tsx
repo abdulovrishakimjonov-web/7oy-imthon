@@ -81,7 +81,7 @@ const BlogSectionInfo = () => {
   }, [searchTerm, allBlogs]);
 
   return (
-    <div className="w-[90%] max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {user && (
         <div className="mb-8 flex justify-center">
           <div className="w-full max-w-lg flex items-center gap-2 bg-gray-50 p-2 rounded-lg border border-gray-200 shadow-sm">

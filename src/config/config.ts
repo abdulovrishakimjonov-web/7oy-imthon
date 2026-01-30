@@ -2,11 +2,11 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAM9Q6tF_tyYaUAN1AGgugNjvKSee3UTfs",
-  authDomain: "green-shop-tuychiboyev.firebaseapp.com",
-  projectId: "green-shop-tuychiboyev",
-  storageBucket: "green-shop-tuychiboyev.firebasestorage.app",
-  messagingSenderId: "629167017049",
+  apiKey: "Abdulvoris_hakimkjonov",
+  authDomain: "abdulvorishakimov@gamil.com",
+  projectId: "abdulvoris",
+  storageBucket: "abdulvoris.api",
+  messagingSenderId: "874702745",
   appId: "1:629167017049:web:8c4c2af4843b53e864f548",
   measurementId: "G-CEVQTRPFSN",
 };

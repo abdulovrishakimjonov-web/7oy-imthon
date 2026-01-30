@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Logo from "../../assets/images/Logo.png";
+import Logo from "../../assets/images/Logo.svg";
 import { Bell, Menu, X } from "lucide-react";
+import Logout from "../../assets/images/Logout.svg";
 import {
   useReduxDispatch,
   useReduxSelector,
@@ -18,32 +19,43 @@ const Header = () => {
   const { data } = useReduxSelector((state) => state.shopSlice);
 
   return (
-    <div className="py-3 border-b border-[#00800043] sticky top-0 bg-white z-50">
-      <div className="w-[90%] max-w-[1550px] m-auto flex items-center justify-between">
+    <div className="py-3 border-b border-[#00800043] sticky top-0 bg-[#F0FDF4] z-50">
+      <div className="w-[90%] max-w-[1200px] m-auto flex items-center justify-between">
         <a href="/">
           <img
             src={Logo}
             alt="Logo"
-            className="w-[120px] sm:w-auto object-contain"
-          />
+            className="w-[120px] sm:w-auto object-contain"/>
         </a>
 
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-[50px]">
           <Link
             to={"/"}
-            className={`${pathname === "/" && "text-[#46A358] font-bold"} font-normal text-[16px] text-[#3d3d3d] hover:text-[#46A358] transition-colors`}
+            className={`${pathname === "/" && "text-[#3D3D3D] font-bold underline decoration-[#46A358] decoration-2 underline-offset-23"} text-[16px] text-[#3D3D3D] transition-colors`}
           >
             Home
           </Link>
           <Link
+            to={"/shop"}
+            className={`${pathname === "/shop" && "text-[#3D3D3D] font-bold underline decoration-[#46A358] decoration-2 underline-offset-23"} text-[16px] text-[#3D3D3D] transition-colors`}
+          >
+            Shop
+          </Link>
+          <Link
+            to={"/plant"}
+            className={`${pathname === "/plant" && "text-[#3D3D3D] font-bold underline decoration-[#46A358] decoration-2 underline-offset-23"} text-[16px] text-[#3D3D3D] transition-colors`}
+          >
+            Plant Care
+          </Link>
+          <Link
             to={"/blog"}
-            className={`${pathname === "/blog" && "text-[#46A358] font-bold"} font-normal text-[16px] text-[#3d3d3d] hover:text-[#46A358] transition-colors`}
+            className={`${pathname === "/blog" && "text-[#3D3D3D] font-bold underline decoration-[#46A358] decoration-2 underline-offset-23"} text-[16px] text-[#3D3D3D] transition-colors`}
           >
             Blog
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-[30px]">
           <svg
             width="20"
             height="20"
@@ -56,7 +68,6 @@ const Header = () => {
               fill="currentColor"
             />
           </svg>
-          <Bell className="cursor-pointer hover:text-[#46A358]" />
           <div onClick={() => navigate("/shop")}>
             <Badge count={data.length}>
               <svg
@@ -80,8 +91,9 @@ const Header = () => {
               }
               dispatch(setAuthorizationModalVisibility());
             }}
-            className="bg-[#46a358] hover:bg-[#3d8f4d] hover:-translate-y-[1px] hover:shadow-md transition-all duration-200 rounded-md cursor-pointer font-medium text-base text-white p-[7px_25px]"
+            className="bg-[#14532D] w-[100px] flex items-center gap-[4px] justify-center hover:bg-[#166534] hover:-translate-y-[1px] hover:shadow-md transition-all duration-200 rounded-md cursor-pointer font-medium text-base text-[#FFFFFF] p-[7px_25px]"
           >
+            <img src={Logout} alt="" />
             {user ? user.name : "Login"}
           </button>
         </div>
@@ -179,7 +191,7 @@ const Header = () => {
               }
               dispatch(setAuthorizationModalVisibility());
             }}
-            className="bg-[#46a358] hover:bg-[#3d8f4d] active:scale-95 transition-all mt-4 rounded-md cursor-pointer font-medium text-base text-white py-2 w-full flex items-center justify-center gap-2"
+            className="bg-[#14532D] hover:bg-[#166534] active:scale-95 transition-all mt-4 rounded-md cursor-pointer font-medium text-base text-white py-2 w-full flex items-center justify-center gap-2"
           >
             <svg
               width="20"

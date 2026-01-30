@@ -1,224 +1,129 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
-import Ctm6W3Jq from "../../assets/images/1-Ctm6W3Jq.png";
-import BF1Oo3xK from "../../assets/images/2-BF1Oo3xK.png";
-import BispicH from "../../assets/images/3-Bi-spicH.png";
-const Footer: React.FC = () => {
+import footer1 from "../../assets/images/footer-img-1.png";
+import footer2 from "../../assets/images/footer-img-2.png";
+import footer3 from "../../assets/images/footer-img-3.png";
+import logo from "../../assets/images/Logo.svg";
+import location from "../../assets/images/Location.svg";
+import masage from "../../assets/images/Message.svg";
+import phone from "../../assets/images/phone.svg";
+import facebook from "../../assets/images/Facebook.svg"
+import instagram from "../../assets/images/Instagram.svg"
+import tiwiter from "../../assets/images/Twitter.svg"
+import lincuden from "../../assets/images/Linkedin.svg"
+import yutube from "../../assets/images/yutube.svg"
+import viza from "../../assets/images/viza.svg"
+
+const Footer = () => {
   return (
-    <footer className="bg-white border-t mt-20 border-gray-100 pt-10 font-sans">
-      <div className="w-[90%] max-w-[1550px] mx-auto px-4 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 border-b border-gray-100 ">
-          <div className="flex flex-col items-start pr-4 border-r-0 lg:border-r border-gray-100 last:border-r-0">
-            <div className="mb-4 relative">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600">
-                <img src={Ctm6W3Jq} alt="" className="mb-3" />
-              </div>
-            </div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-2">
-              Garden Care
-            </h4>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              We are an online plant shop offering a wide range of cheap and
-              trendy plants.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start pr-4 border-r-0 lg:border-r border-gray-100 last:border-r-0">
-            <div className="mb-4 relative">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600">
-                <img src={BF1Oo3xK} alt="" className="mb-3" />
-              </div>
-            </div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-2">
-              Plant Renovation
-            </h4>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              We are an online plant shop offering a wide range of cheap and
-              trendy plants.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start pr-4">
-            <div className="mb-4 relative">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600">
-                <img src={BispicH} alt="" className="mb-3" />
-              </div>
-            </div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-2">
-              Watering Garden
-            </h4>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              We are an online plant shop offering a wide range of cheap and
-              trendy plants.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start">
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-4">
-              Would you like to join newsletters?
-            </h4>
-            <div className="flex w-full mb-4 shadow-sm rounded-md overflow-hidden">
-              <input
-                type="email"
-                placeholder="enter your email address..."
-                className="flex-1 min-w-[120px] p-3 text-sm border border-gray-200 focus:outline-none focus:border-green-500 rounded-l-md"
-              />
-              <button className="bg-[#46a358] cursor-pointer text-white px-6 py-3 font-bold text-sm rounded-r-md hover:bg-[#357a40] transition-colors">
-                Join
-              </button>
-            </div>
-            <p className="text-gray-500 text-xs leading-relaxed">
-              We usually post offers and challenges in newsletter. We're your
-              online houseplant destination. We offer a wide range of
-              houseplants and accessories shipped directly from our (green)house
-              to yours!
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  border-b border-gray-100">
-          <div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-4">
-              MY ACCOUNT
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Brand Center
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-4">
-              HELP & GUIDE
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Discord Server
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-4">
-              CATEGORIES
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Licensing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#46A358]">
-                  Terms & Conditions
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-4">
-              SOCIAL MEDIA
-            </h4>
-            <div className="flex space-x-3 mb-8">
-              <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-green-600 hover:bg-green-50 cursor-pointer transition">
-                <Facebook size={16} />
-              </div>
-              <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-green-600 hover:bg-green-50 cursor-pointer transition">
-                <Instagram size={16} />
-              </div>
-              <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-green-600 hover:bg-green-50 cursor-pointer transition">
-                <Twitter size={16} />
-              </div>
-              <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-green-600 hover:bg-green-50 cursor-pointer transition">
-                <Linkedin size={16} />
-              </div>
-              <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-green-600 hover:bg-green-50 cursor-pointer transition">
-                <Youtube size={16} />
-              </div>
-            </div>
-
-            <h4 className="font-bold text-[17px] leading-[94%] text-[#3d3d3d] font-family mb-4">
-              WE ACCEPT
-            </h4>
-            <div className="flex items-center gap-4">
-              <a href="#">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-                  alt="PayPal"
-                  className="h-6"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                  alt="MasterCard"
-                  className="h-6"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
-                  alt="Visa"
-                  className="h-6"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                  alt="Amex"
-                  className="h-6"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="py-6 text-center">
-          <p className="text-gray-500 text-sm">
-            © 2025 GreenShop. All Rights Reserved.
+    <footer className="max-w-[1200px] bg-[#F0FDF4] m-auto">
+      <div className="py-[31px] px-[23px] flex gap-[50px] items-center">
+        <div>
+          <img src={footer1} alt="" className="mb-[15px]" />
+          <h4 className="text-[#212121] font-bold mb-[9px]">Garden Care</h4>
+          <p className="text-[#727272] text-[14px]">
+            We are an online plant shop <br /> offering a wide range of cheap{" "}
+            <br /> and trendy plants.
           </p>
         </div>
+        <div className="w-[1px] h-[187px] bg-[#46A3581A] opacity-[10px]"></div>
+        <div>
+          <img src={footer2} alt="" className="mb-[15px]" />
+          <h4 className="text-[#212121] font-bold mb-[9px]">Plant Renovation</h4>
+          <p className="text-[#727272] text-[14px]">
+            We are an online plant shop <br /> offering a wide range of cheap{" "}
+            <br /> and trendy plants.
+          </p>
+        </div>
+        <div className="w-[1px] h-[187px] bg-[#46A3581A] opacity-[10px]"></div>
+        <div>
+          <img src={footer3} alt="" className="mb-[15px]" />
+          <h4 className="text-[#212121] font-bold mb-[9px]">Watering Graden</h4>
+          <p className="text-[#727272] text-[14px]">
+            We are an online plant shop <br /> offering a wide range of cheap{" "}
+            <br /> and trendy plants.
+          </p>
+        </div>
+        <div>
+          <h4 className="text-[#1c1c1c] text-[16px] mb-[18px]">
+            Would you like to join newsletters?
+          </h4>
+          <div className="flex w-full mb-4 shadow-sm rounded-md overflow-hidden">
+            <input
+              type="email"
+              placeholder="enter your email address..."
+              className="flex-1 min-w-[120px] p-3 text-sm border border-gray-200 focus:outline-none focus:border-green-500 rounded-l-md"
+            />
+            <button className="bg-[#14532D] cursor-pointer text-white px-6 py-3 font-bold text-sm rounded-r-md hover:bg-[#166534] transition-colors">
+              Join
+            </button>
+          </div>
+          <p className="text-[#727272] text-[13px]">
+            We usually post offers and challenges in newsletter. We’re <br />{" "}
+            your online houseplant destination. We offer a wide range <br /> of
+            houseplants and accessories shipped directly from our <br />{" "}
+            (green)house to yours!{" "}
+          </p>
+        </div>
+      </div>
+      <div className="flex items-center gap-[107px] py-[27px] px-[23px] mb-[33px] bg-[#d3ffe0]">
+        <img src={logo} alt="" />
+        <div className="flex items-center gap-[9px] ">
+          <img src={location} alt="" />
+          <p className="text-[#3D3D3D] text-[14px]">
+            70 West Buckingham Ave. <br />
+            Farmingdale, NY 11735
+          </p>
+        </div>
+        <div className="flex items-center gap-[9px]">
+          <img src={masage} alt="" />
+          <p className="text-[#3D3D3D] text-[14px]">contact@greenshop.com</p>
+        </div>
+        <div className="flex items-center gap-[9px]">
+          <img src={phone} alt="" />
+          <p className="text-[#3D3D3D] text-[14px]">+88 01911 717 490</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-[155px] mb-[20px]">
+        <div className="flex flex-col gap-[10px] px-[23px]">
+          <b className="text-[#262525] text-[18px] font-bold">My Account</b>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">My Account</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Our stores</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Contact us</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Career</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Specials</a>
+        </div>
+        <div className="flex flex-col gap-[10px] px-[23px]">
+          <b className="text-[#262525] text-[18px] font-bold">Help & Guide</b>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Help Center</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">How to Buy</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Shipping & Delivery</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Product Policy</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">How to Return</a>
+        </div>
+        <div className="flex flex-col gap-[10px] px-[23px]">
+          <b className="text-[#262525] text-[18px] font-bold">Categories</b>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">House Plants</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Potter Plants</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Seeds</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Small Plants</a>
+          <a className="text-[#3D3D3D] text-[14px]" href="#">Accessorie</a>
+        </div>
+        <div>
+          <h4 className="text-[#272727] text-[18px] font-bold mb-[20px]">Social Media</h4>
+          <div className="flex gap-[10px] mb-[33px]">
+            <img className="border-2 border-[#d3ffe0] cursor-pointer rounded-md py-2 px-4" src={facebook} alt="" />
+            <img className="border-2 border-[#d3ffe0] cursor-pointer rounded-md py-2 px-3" src={instagram} alt="" />
+            <img className="border-2 border-[#d3ffe0] cursor-pointer rounded-md py-2 px-3" src={tiwiter} alt="" />
+            <img className="border-2 border-[#d3ffe0] cursor-pointer rounded-md py-2 px-3" src={lincuden} alt="" />
+            <img className="border-2 border-[#d3ffe0] cursor-pointer rounded-md py-2 px-3" src={yutube} alt="" />
+          </div>
+          <p className="text-[#272727] text-[18px] mb-[13px] font-bold">We accept</p>
+        <img src={viza} alt="" />
+        </div>
+      </div>
+      <div className="py-">
+        <div className="w-full h-[1px] bg-[#46A35833]"></div>
+        <p className="text-center text-[14px] text-[#3D3D3D] py-4">© 2021 GreenShop. All Rights Reserved.</p>
       </div>
     </footer>
   );

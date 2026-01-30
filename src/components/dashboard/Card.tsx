@@ -38,7 +38,7 @@ const Card = ({ product }: { product: ProductType }) => {
           }
         }}
         className="
-          relative w-full h-[300px] bg-[#fbfbfb]
+          relative w-full h-[300px] bg-[#F0FDF4]
           flex items-center justify-center
           overflow-hidden transition-all duration-300
           group-hover:border-t-[2px] group-hover:border-[#46A358]
@@ -102,12 +102,12 @@ const Card = ({ product }: { product: ProductType }) => {
       </div>
 
       <div className="mt-3 flex flex-col items-center lg:items-start">
-        <h3 className="text-[#3D3D3D] text-[16px] font-normal truncate w-full lg:text-start text-center">
+        <h3 className="text-[#202020] text-[16px] font-normal truncate w-full lg:text-start text-center">
           {product.title}
         </h3>
 
         <div className="flex items-center gap-3 mt-1">
-          <span className="text-[#46A358] font-bold text-[16px]">
+          <span className="text-[#14532D] font-bold text-[16px]">
             ${product.price}
           </span>
 

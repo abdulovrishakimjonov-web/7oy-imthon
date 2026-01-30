@@ -18,26 +18,26 @@ const CartTotal = () => {
           placeholder="Enter coupon..."
           className="
             h-10 w-full min-w-0
-            border border-[#46A358]
+            border border-[#14532D]
             pl-3 pr-24 
             placeholder:font-light placeholder:text-sm
             rounded-md
             outline-none
-            focus:border-[#357a40]
+            focus:border-[#166534]
           "
         />
         <button
           className="
             absolute right-0 top-0
             h-10
-            bg-[#46A358]
+            bg-[#14532D]
             cursor-pointer
             text-white
             px-4 sm:px-6
             font-medium
             text-sm sm:text-base
             rounded-r-md
-            hover:bg-[#357a40]
+            hover:bg-[#166534]
             transition-colors
           "
         >
@@ -49,7 +49,7 @@ const CartTotal = () => {
 
       <button
         onClick={() => navigate("/checkout")}
-        className="bg-[#46A358] w-full cursor-pointer h-[45px] rounded-md text-white font-bold text-[15px] sm:text-[16px] mt-8 hover:bg-[#357a40] transition-colors uppercase shadow-md shadow-[#46a3584d]"
+        className="bg-[#14532D] w-full cursor-pointer h-[45px] rounded-md text-white font-bold text-[15px] sm:text-[16px] mt-8 hover:bg-[#166534] transition-colors uppercase shadow-md shadow-[#46a3584d]"
       >
         Proceed To Checkout
       </button>
@@ -59,10 +59,10 @@ const CartTotal = () => {
           className="
     bg-[#46a3591e] cursor-pointer
     flex items-center justify-center gap-1
-    text-base text-[#46a358]
+    text-base text-[#14532D]
     w-full h-[40px] rounded-md
 
-    hover:bg-[#46a358]
+    hover:bg-[#166534]
     hover:text-white
     transition-all duration-200
   "

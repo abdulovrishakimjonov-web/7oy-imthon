@@ -8,6 +8,7 @@ import ProductPage from "../pages/ProductPage";
 import Shop from "../pages/shop/Shop";
 import BlogDetail from "../pages/BlogDetail";
 import CheckoutPage from "../pages/CheckoutPage";
+import Plant from "../pages/plant/Plant";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,9 @@ export const router = createBrowserRouter([
       { path: "/shop/:category/:id", element: <ProductPage /> },
       { path: "/blog/:id", element: <BlogDetail /> },
       { path: "/checkout", element: <CheckoutPage /> },
+      { path: "/plant", element: <Plant/> },
+
+      
     ],
   },
 ]);

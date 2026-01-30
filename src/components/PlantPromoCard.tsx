@@ -1,6 +1,6 @@
 import React from "react";
-import x9mMEaU from "../assets/images/2-6x9mMEaU.png";
-import Bhbx3ro7 from "../assets/images/1-Bhbx3ro7.png";
+import PlantPromoSection1 from "../assets/images/PlantPromoSection-img-1.png";
+import PlantPromoSection2 from "../assets/images/PlantPromoSection-img-2.png";
 import Ellipse8 from "../assets/images/Ellipse8.png";
 import Ellipse7 from "../assets/images/Ellipse7.png";
 
@@ -25,7 +25,7 @@ const promoData: PlantData[] = [
     title: "SUMMER CACTUS & SUCCULENTS",
     description:
       "We are an online plant shop offering a wide range of cheap and trendy plants",
-    image: Bhbx3ro7,
+    image: PlantPromoSection1,
     link: "/shop/cactus",
   },
   {
@@ -33,7 +33,7 @@ const promoData: PlantData[] = [
     title: "STYLING TRENDS & MUCH MORE",
     description:
       "We are an online plant shop offering a wide range of cheap and trendy plants",
-    image: x9mMEaU,
+    image: PlantPromoSection2,
     link: "/shop/styling",
   },
 ];
@@ -44,7 +44,7 @@ const PlantPromoCard: React.FC<PlantPromoCardProps> = ({
   image,
 }) => {
   return (
-    <div className="relative  flex flex-col sm:flex-row items-center justify-between border border-gray-100 rounded bg-[#fbfbfb] p-6 shadow-sm overflow-hidden h-full">
+    <div className="relative  flex flex-col sm:flex-row items-center justify-between  rounded bg-[#F0FDF4] p-6 overflow-hidden h-full">
       <div className="absolute z-20 bottom-[-20px] left-[-0px]">
         <img src={Ellipse8} alt="" />
       </div>
@@ -62,7 +62,7 @@ const PlantPromoCard: React.FC<PlantPromoCardProps> = ({
       </div>
 
       <div className="z-10 w-full sm:w-2/3 flex flex-col items-center sm:items-end text-center sm:text-right pl-0 sm:pl-4">
-        <h3 className="font-family font-black text-[18px] leading-[133%] uppercase text-right text-[#3d3d3d] mb-2  max-w-[200px]">
+        <h3 className="font-family font-black text-[18px] leading-[133%] uppercase text-right text-[#262626] mb-2  max-w-[200px]">
           {title}
         </h3>
         <p className="font-family font-normal text-[14px] leading-[171%] text-right text-[#727272] mb-5  max-w-[280px]">
@@ -71,7 +71,7 @@ const PlantPromoCard: React.FC<PlantPromoCardProps> = ({
 
         <a
           href="#"
-          className="inline-flex items-center justify-center gap-2 bg-[#46a358] hover:bg-[#357a40] transition-colors font-family font-medium text-[14px] leading-[143%] text-[#fff] px-5 py-2.5 rounded-md min-w-[140px]"
+          className="inline-flex items-center justify-center gap-2 bg-[#14532D] hover:bg-[#166534] transition-colors font-family font-medium text-[14px] leading-[143%] text-[#fff] px-5 py-2.5 rounded-md min-w-[140px]"
         >
           Find More
           <svg
@@ -96,7 +96,7 @@ const PlantPromoCard: React.FC<PlantPromoCardProps> = ({
 
 const PlantPromoSection: React.FC = () => {
   return (
-    <section className="w-[90%] max-w-[1550px] mx-auto px-4 py-6">
+    <section className=" max-w-[1200px] mx-auto py-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {promoData.map((item) => (
           <PlantPromoCard

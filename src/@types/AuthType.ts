@@ -105,5 +105,4 @@ export interface BlogType {
   created_at: string;
   reaction_length: number;
   views?: number;
-
 }

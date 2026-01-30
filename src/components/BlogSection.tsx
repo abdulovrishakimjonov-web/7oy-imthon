@@ -53,9 +53,9 @@ const blogPosts: BlogPost[] = [
 const BlogSection: React.FC = () => {
   return (
     <section className="py-12 bg-white">
-      <div className="max-w-[1550] w-[90%] mx-auto px-4 max-w-7xl">
+      <div className="max-w-[1200px] mx-auto max-w-7xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          <h2 className="text-3xl font-bold text-[#262626] mb-2">
             Our Blog Posts
           </h2>
           <p className="text-gray-500 font-normal">
@@ -66,7 +66,7 @@ const BlogSection: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {blogPosts.map((post) => (
-            <div key={post.id} className="group flex flex-col">
+            <div key={post.id} className="group bg-[#F0FDF4] flex flex-col">
               <div className="relative overflow-hidden rounded-lg mb-4 bg-gray-100 h-56 w-full">
                 <img
                   src={post.imageUrl}
@@ -75,23 +75,23 @@ const BlogSection: React.FC = () => {
                 />
               </div>
 
-              <div className="text-green-600 text-sm font-medium mb-2 flex items-center">
+              <div className="text-[#14532D] text-sm font-medium mb-2 px-2 flex items-center">
                 <span>{post.date}</span>
-                <span className="mx-1.5 text-green-600">|</span>
+                <span className="mx-1.5 text-[#14532D]">|</span>
                 <span>{post.readTime}</span>
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+              <h3 className="text-xl font-bold px-2 text-gray-900 mb-2 leading-tight">
                 {post.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mb-3 line-clamp-2">
+              <p className="text-gray-500 px-2 text-sm mb-3 line-clamp-2">
                 {post.description}
               </p>
 
               <a
                 href="#"
-                className="inline-flex items-center text-gray-900 font-bold text-sm hover:text-green-600 transition-colors mt-auto group/link"
+                className="inline-flex items-center px-2 py-1 text-gray-900 font-bold text-sm hover:text-[#14532D] transition-colors mt-auto group/link"
               >
                 Read More
                 <svg

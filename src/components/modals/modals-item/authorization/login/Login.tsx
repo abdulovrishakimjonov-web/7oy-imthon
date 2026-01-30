@@ -68,9 +68,9 @@ const Login = () => {
           <button
             type="submit"
             disabled={isPending}
-            className="bg-[#46A358] cursor-pointer font-bold text-base w-full mt-4 text-white h-10 rounded-md
+            className="bg-[#14532D] cursor-pointer font-bold text-base w-full mt-4 text-white h-10 rounded-md
               flex items-center justify-center
-              hover:bg-[#3d8f4d] hover:shadow-md
+              hover:bg-[#166534] hover:shadow-md
               active:scale-[0.98]
               transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
           >

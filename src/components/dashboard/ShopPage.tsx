@@ -11,6 +11,7 @@ import Card from "./Card";
 import { useSearchParamsHandler } from "../../hooks/paramsApi/paramsApi";
 import ProductsTitle from "./products_title/ProductsTitleSection";
 import Discount from "./Discount";
+import { RightOutlined } from "@ant-design/icons";
 
 const ShopPage = () => {
   const { cateGoryLoader } = loaderApi();
@@ -59,9 +60,9 @@ const ShopPage = () => {
   const skeletons = Array.from({ length: 6 });
 
   return (
-    <div className="w-[90%] max-w-[1550px] m-auto mt-10 mb-20 flex flex-col lg:flex-row gap-8">
-      <div className="w-full lg:w-[25%] bg-[#fbfbfb] p-4 rounded-md h-fit">
-        <h3 className="font-bold text-[18px] text-[#3D3D3D] mb-4">
+    <div className=" max-w-[1200px] m-auto mt-10 mb-20 flex flex-col lg:flex-row gap-8">
+      <div className="w-full lg:w-[25%] bg-[#F0FDF4] p-4 rounded-md h-fit">
+        <h3 className="font-bold text-[18px] text-[#272626] mb-[7px]">
           Categories
         </h3>
         <div className="p-2 flex flex-col gap-5">
@@ -80,11 +81,11 @@ const ShopPage = () => {
                     })
                   }
                   className={`flex items-center justify-between cursor-pointer transition-colors
-                    ${category === cat.route_path ? "text-[#46a358] font-bold" : "text-[#3d3d3d] hover:text-[#46a358]"}
+                    ${category === cat.route_path ? "text-[#166534] font-bold" : "text-[#3d3d3d] text-[15px] hover:text-[#46a358]"}
                   `}
                 >
                   <h3>{cat.title}</h3>
-                  <span className="text-gray-400">({cat.count})</span>
+                  <span className="text-[#166534]">({cat.count})</span>
                 </div>
               ))}
         </div>
@@ -99,15 +100,15 @@ const ShopPage = () => {
             max={1000}
             value={slider}
             onChange={changeSlider}
-            trackStyle={[{ backgroundColor: "#46A358" }]}
+            trackStyle={[{ backgroundColor: "#14532D" }]}
             handleStyle={[
-              { borderColor: "#46A358", backgroundColor: "#46A358" },
-              { borderColor: "#46A358", backgroundColor: "#46A358" },
+              { borderColor: "#14532D", backgroundColor: "#14532D" },
+              { borderColor: "#14532D", backgroundColor: "#14532D" },
             ]}
           />
-          <p className="mt-2 text-[#3D3D3D]">
+          <p className="mt-2 text-[#14532D]">
             Price:{" "}
-            <span className="text-[#46A358] font-bold">
+            <span className="text-[#14532D] font-bold">
               {slider[0]}$ - {slider[1]}$
             </span>
           </p>
@@ -122,7 +123,7 @@ const ShopPage = () => {
               sort,
             })
           }
-          className="bg-[#46a358] w-full mt-2 rounded-lg font-medium text-white p-[7px_25px] cursor-pointer transition-all duration-300 hover:bg-[#367e42] hover:shadow-lg"
+          className="bg-[#14532D] w-[90px] mt-2 rounded-lg font-medium text-white p-[7px_25px] cursor-pointer transition-all duration-300 hover:bg-[#166534] hover:shadow-lg"
         >
           Filter
         </button>
@@ -137,12 +138,12 @@ const ShopPage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {productsError ? (
-            <p className="text-red-500 font-medium">Products not found 😕</p>
+            <p className="text-red-500 font-medium">Xatolik</p>
           ) : productsLoading ? (
             skeletons.map((_, idx) => (
               <div
                 key={idx}
-                className="p-4 border rounded-md shadow-sm flex flex-col gap-2 items-center justify-center h-[300px]"
+                className="p-4 rounded-md  shadow-sm flex flex-col gap-2 items-center justify-center h-[300px]"
               >
                 <Skeleton.Image active style={{ width: 180, height: 180 }} />
                 <Skeleton.Input active />
@@ -153,6 +154,13 @@ const ShopPage = () => {
               <Card key={product._id} product={product} />
             ))
           )}
+        </div>
+        <div className="flex gap-[10px] items-center justify-end">
+          <button className="w-[35px] cursor-pointer p-1 rounded-md border-2 border-[#1e1e1e3e] text-[#1e1e1e] text-[16px] hover:text-white hover:font-bold hover:border-white transition-all hover:bg-[#166534]">1</button>
+          <button className="w-[35px] cursor-pointer p-1 rounded-md border-2 border-[#1e1e1e3e] text-[#1e1e1e] text-[16px] hover:text-white hover:font-bold hover:border-white transition-all hover:bg-[#166534]">2</button>
+          <button className="w-[35px] cursor-pointer p-1 rounded-md border-2 border-[#1e1e1e3e] text-[#1e1e1e] text-[16px] hover:text-white hover:font-bold hover:border-white transition-all hover:bg-[#166534]">3</button>
+          <button className="w-[35px] cursor-pointer p-1 rounded-md border-2 border-[#1e1e1e3e] text-[#1e1e1e] text-[16px] hover:text-white hover:font-bold hover:border-white transition-all hover:bg-[#166534]">4</button>
+          <button className="w-[35px] cursor-pointer p-1 rounded-md border-2 border-[#1e1e1e3e] text-[#1e1e1e] text-[16px] hover:text-white hover:font-bold hover:border-white transition-all hover:bg-[#166534]"><RightOutlined /></button>
         </div>
       </div>
     </div>

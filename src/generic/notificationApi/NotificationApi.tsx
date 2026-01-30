@@ -14,7 +14,7 @@ export const notificationApi = () => {
       case "409":
         return toast.error("Email yoki parol xato!");
       case "confirm_password":
-        return toast.error("Parollar mos emas!");
+        return toast.error("Parollar tog'ri kelmadi!");
       case "register":
         return toast.success("Muvaffaqiyatli ro'yxatdan o'tdingiz!");
       case "error":

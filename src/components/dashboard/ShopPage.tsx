@@ -86,8 +86,8 @@ const ShopPage = () => {
                   onChange={(val) => setSlider(val)}
                   trackStyle={[{ backgroundColor: "#166534", height: 6 }]}
                   handleStyle={[
-                    { borderColor: "#166534", backgroundColor: "#fff", borderWeight: 3, width: 18, height: 18 },
-                    { borderColor: "#166534", backgroundColor: "#fff", borderWeight: 3, width: 18, height: 18 },
+                    { borderColor: "#166534", backgroundColor: "#fff", width: 18, height: 18 },
+                    { borderColor: "#166534", backgroundColor: "#fff", width: 18, height: 18 },
                   ]}
                 />
               </div>

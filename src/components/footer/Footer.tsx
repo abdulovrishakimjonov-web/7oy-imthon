@@ -1,4 +1,3 @@
-import React from "react";
 import footer1 from "../../assets/images/footer-img-1.png";
 import footer2 from "../../assets/images/footer-img-2.png";
 import footer3 from "../../assets/images/footer-img-3.png";

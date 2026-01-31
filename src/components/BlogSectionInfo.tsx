@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEye, FaRegComment, FaRegHeart, FaSearch, FaArrowRight } from "react-icons/fa";
+import { FaEye, FaRegHeart, FaSearch, FaArrowRight } from "react-icons/fa";
 import { useQueryHandler } from "../hooks/useQuery/UseQuery";
 import { useReduxSelector } from "../hooks/useRedux/useRedux";
 
@@ -18,7 +18,7 @@ interface BlogType {
 
 const BlogSectionInfo = () => {
   const navigate = useNavigate();
-  const user = useReduxSelector((state: any) => state.userSlice.user);
+  // const user = useReduxSelector((state: any) => state.userSlice.user);
   const skeletonArray = [1, 2, 3, 4, 5, 6];
 
   const [searchTerm, setSearchTerm] = useState("");

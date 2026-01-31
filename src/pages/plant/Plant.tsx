@@ -1,4 +1,3 @@
-import React from "react";
 import plant from "../../assets/images/flover-3.png"
 
 export default function PlantCare() {

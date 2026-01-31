@@ -17,7 +17,7 @@ import type { AuthType } from "../@types/AuthType";
 import { useReduxDispatch } from "../hooks/useRedux/useRedux";
 import { logout } from "../redux/user-slice";
 import Address from "../components/Address";
-import MyProducts from "../components/MyProducts";
+// import MyProducts from "../components/MyProducts";
 // import Address from "../components/Address";
 // import MyProducts from "./MyProducts";
 
@@ -32,10 +32,10 @@ const Profile = () => {
   const activeTab = tab || "account-details";
   const address = tab || "address";
   const orders = tab || "orders";
-  const wishlist = tab || "wishlist";
-  const reports = tab || "reports";
-  const downloads = tab || "downloads";
-  const support = tab || "support";
+  // const wishlist = tab || "wishlist";
+  // const reports = tab || "reports";
+  // const downloads = tab || "downloads";
+  // const support = tab || "support";
   
 
   const [userData, setUserData] = useState<AuthType | null>(() => {
@@ -235,7 +235,9 @@ const Profile = () => {
         )}
 
         {orders === "orders" && (
-           <MyProducts user={userData} setUser={setUserData} />
+          <div>
+            
+          </div>
         )}
 
        

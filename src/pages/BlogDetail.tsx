@@ -63,7 +63,7 @@ const BlogDetail: React.FC = () => {
     : (blogData as BlogType);
 
   return (
-    <div className="max-w-[1550px] w-[90%] mx-auto px-4 py-10 bg-white">
+    <div className="max-w-[1200px] w-[90%] mx-auto px-4 py-10 bg-white">
       <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
         {blog.title}
       </h1>

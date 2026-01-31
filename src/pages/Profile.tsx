@@ -17,6 +17,9 @@ import type { AuthType } from "../@types/AuthType";
 import { useReduxDispatch } from "../hooks/useRedux/useRedux";
 import { logout } from "../redux/user-slice";
 import Address from "../components/Address";
+import MyProducts from "../components/MyProducts";
+// import Address from "../components/Address";
+// import MyProducts from "./MyProducts";
 
 
 
@@ -27,6 +30,13 @@ const Profile = () => {
 
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const activeTab = tab || "account-details";
+  const address = tab || "address";
+  const orders = tab || "orders";
+  const wishlist = tab || "wishlist";
+  const reports = tab || "reports";
+  const downloads = tab || "downloads";
+  const support = tab || "support";
+  
 
   const [userData, setUserData] = useState<AuthType | null>(() => {
     const cookieUser = Cookies.get("user");
@@ -35,10 +45,12 @@ const Profile = () => {
 
   const menuItems = [
     { key: "account-details", label: "Account Details", icon: <UserOutlined /> },
-    { key: "my-products", label: "My Products", icon: <ShoppingOutlined /> },
-    { key: "address", label: "Address", icon: <EnvironmentOutlined /> },
+    { key: "address", label: "Address", icon:  <EnvironmentOutlined /> },
+    { key: "orders", label: "Orders", icon: <ShoppingOutlined /> },
     { key: "wishlist", label: "Wishlist", icon: <HeartOutlined /> },
-    { key: "track-order", label: "Track Order", icon: <SolutionOutlined /> },
+    { key: "reports", label: "Reports", icon: <SolutionOutlined /> },
+    { key: "downloads", label: "Downloads", icon: <UploadOutlined/> },
+    { key: "support", label : "Support", icon: <SolutionOutlined /> },
   ];
 
   const confirmLogout = () => {
@@ -218,13 +230,15 @@ const Profile = () => {
           </div>
         )}
 
-        {activeTab === "address" && (
+        {address === "address" && (
            <Address user={userData} setUser={setUserData} />
         )}
 
-        {activeTab === "my-products" && (
-          <div>My Products component will be here</div>
+        {orders === "orders" && (
+           <MyProducts user={userData} setUser={setUserData} />
         )}
+
+       
       </div>
 
       <Modal

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEye, FaRegComment, FaRegHeart, FaSearch } from "react-icons/fa";
+import { FaEye, FaRegComment, FaRegHeart, FaSearch, FaArrowRight } from "react-icons/fa";
 import { useQueryHandler } from "../hooks/useQuery/UseQuery";
 import { useReduxSelector } from "../hooks/useRedux/useRedux";
 
@@ -19,7 +19,6 @@ interface BlogType {
 const BlogSectionInfo = () => {
   const navigate = useNavigate();
   const user = useReduxSelector((state: any) => state.userSlice.user);
-
   const skeletonArray = [1, 2, 3, 4, 5, 6];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,16 +31,15 @@ const BlogSectionInfo = () => {
     pathname: "blog",
     param: { search: "" },
   });
-
+ 
   useEffect(() => {
     if (apiData.length > 0) {
       setAllBlogs(apiData);
-      localStorage.setItem("blogs_cache", JSON.stringify(apiData));
       setFilteredBlogs(apiData);
     } else {
       const stored = localStorage.getItem("blogs_cache");
       if (stored) {
-        const parsed: BlogType[] = JSON.parse(stored);
+        const parsed = JSON.parse(stored);
         setAllBlogs(parsed);
         setFilteredBlogs(parsed);
       }
@@ -49,117 +47,105 @@ const BlogSectionInfo = () => {
   }, [apiData]);
 
   const handleSearch = () => {
+    if (!searchTerm.trim()) return;
     setIsSearching(true);
-    setFilteredBlogs([]);
-
     setTimeout(() => {
-      const term = searchTerm.toLowerCase().trim();
-      if (!term) {
-        setFilteredBlogs(allBlogs);
-      } else {
-        const filtered = allBlogs.filter(
-          (blog) =>
-            blog.title?.toLowerCase().includes(term) ||
-            blog.short_description?.toLowerCase().includes(term) ||
-            blog.content?.toLowerCase().includes(term),
-        );
-        setFilteredBlogs(filtered);
-      }
+      const filtered = allBlogs.filter((blog) =>
+        blog.title?.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredBlogs(filtered);
       setIsSearching(false);
-    }, 2000);
+    }, 500);
   };
 
-  useEffect(() => {
-    if (searchTerm === "") {
-      setIsSearching(true);
-      setFilteredBlogs([]);
-      setTimeout(() => {
-        setFilteredBlogs(allBlogs);
-        setIsSearching(false);
-      }, 1000);
-    }
-  }, [searchTerm, allBlogs]);
-
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {user && (
-        <div className="mb-8 flex justify-center">
-          <div className="w-full max-w-lg flex items-center gap-2 bg-gray-50 p-2 rounded-lg border border-gray-200 shadow-sm">
-            <div className="relative flex-grow">
-              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search blogs..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 transition-all text-sm sm:text-base"
-              />
-            </div>
+    <div className="min-h-screen bg-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        {/* Header qismi */}
+        <div className="border-b border-gray-100 pb-10 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Our Publications</h1>
+            <p className="text-gray-500">Latest updates, garden care guides and plant stories.</p>
+          </div>
 
-            <button
-              onClick={handleSearch}
-              className="bg-[#46a358] cursor-pointer hover:bg-[#3d8f4d] text-white font-medium py-2.5 px-6 rounded-md transition-colors duration-300 flex items-center gap-2 shadow-md shadow-green-500/20 active:scale-95"
-            >
-              Search
-            </button>
+          {/* Qidiruv - Minimalist */}
+          <div className="relative w-full md:w-80">
+            <input
+              type="text"
+              placeholder="Search articles..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+              className="w-full pl-4 pr-10 py-2.5 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:border-[#46a358] focus:ring-1 focus:ring-[#46a358] transition-all text-sm"
+            />
+            <FaSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer hover:text-[#46a358]" onClick={handleSearch} />
           </div>
         </div>
-      )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {isSearching || (apiLoading && allBlogs.length === 0) ? (
-          skeletonArray.map((_, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm animate-pulse flex flex-col justify-between h-56"
-            >
-              <div className="h-5 bg-gray-300 rounded w-3/4 mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded mb-2"></div>
-              <div className="flex items-center justify-between mt-auto pt-4">
-                <div className="h-4 w-12 bg-gray-300 rounded"></div>
-                <div className="h-4 w-12 bg-gray-300 rounded"></div>
-                <div className="h-4 w-12 bg-gray-300 rounded"></div>
+        {/* Bloglar To'plami */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {isSearching || (apiLoading && allBlogs.length === 0) ? (
+            skeletonArray.map((_, idx) => (
+              <div key={idx} className="border border-gray-100 p-6 rounded-md animate-pulse h-64 flex flex-col">
+                <div className="h-4 bg-gray-100 w-1/4 mb-4"></div>
+                <div className="h-6 bg-gray-100 w-full mb-4"></div>
+                <div className="h-4 bg-gray-50 w-full mb-2"></div>
+                <div className="h-4 bg-gray-50 w-2/3"></div>
               </div>
+            ))
+          ) : filteredBlogs.length === 0 ? (
+            <div className="col-span-full py-20 text-center border border-dashed border-gray-200 rounded-md">
+              <p className="text-gray-400">No publications found matching your search.</p>
             </div>
-          ))
-        ) : filteredBlogs.length === 0 ? (
-          <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center py-10">
-            <p className="text-gray-500 text-lg">
-              {searchTerm
-                ? `"${searchTerm}" bo'yicha hech narsa topilmadi.`
-                : "Hozircha bloglar mavjud emas."}
-            </p>
-          </div>
-        ) : (
-          filteredBlogs.map((blog) => (
-            <div
-              key={blog._id}
-              onClick={() => navigate(`/blog/${blog._id}`)}
-              className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col justify-between h-full group"
-            >
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
+          ) : (
+            filteredBlogs.map((blog) => (
+              <article
+                key={blog._id}
+                onClick={() => navigate(`/blog/${blog._id}`)}
+                className="group p-6 border border-gray-100 rounded-md hover:border-[#46a358]/30 hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col h-full bg-white"
+              >
+                {/* Tepki qismi: Meta ma'lumotlar */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-bold text-[#46a358] uppercase tracking-wider bg-green-50 px-2 py-0.5 rounded-sm">
+                    {blog.created_by || "Plant Care"}
+                  </span>
+                  <span className="text-gray-400 text-[11px]">
+                    {new Date(blog.created_at).toLocaleDateString()}
+                  </span>
+                </div>
+
+                {/* Sarlavha */}
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#46a358] transition-colors line-clamp-2">
                   {blog.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-4">
-                  {blog.short_description || blog.content}
+
+                {/* Tavsif */}
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
+                  {blog.short_description || blog.content?.replace(/<[^>]*>/g, '')}
                 </p>
-              </div>
-              <div className="flex items-center justify-between text-gray-400 text-sm mt-4 pt-4 border-t border-gray-100">
-                <div className="flex items-center gap-1">
-                  <FaEye /> <span>{blog.views ?? 0}</span>
+
+                {/* Pastki qism: Statistika va Link */}
+                <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
+                  <div className="flex items-center gap-4 text-gray-400">
+                    <div className="flex items-center gap-1">
+                      <FaEye className="text-xs" />
+                      <span className="text-[11px] font-medium">{blog.views ?? 0}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <FaRegHeart className="text-xs" />
+                      <span className="text-[11px] font-medium">{blog.likes ?? 0}</span>
+                    </div>
+                  </div>
+                  
+                  <span className="text-[#46a358] text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Read <FaArrowRight className="text-[10px]" />
+                  </span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <FaRegComment /> <span>{blog.comments_count ?? 0}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <FaRegHeart /> <span>{blog.likes ?? 0}</span>
-                </div>
-              </div>
-            </div>
-          ))
-        )}
+              </article>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

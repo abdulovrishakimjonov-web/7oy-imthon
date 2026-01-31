@@ -3,7 +3,7 @@ import Shopping from "./shopping/Shopping";
 
 const ProductsShop = () => {
   return (
-    <div className=" md:w-[1200PX] max-w-[1550px] m-auto mt-6 md:mt-10 mb-20">
+    <div className=" md:w-[1200PX] max-w-[1200px] m-auto mt-6 md:mt-10 mb-20">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
        
         <div className="w-full lg:w-[65%]">

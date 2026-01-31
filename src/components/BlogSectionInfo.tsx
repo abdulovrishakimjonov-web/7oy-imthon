@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaRegHeart, FaSearch, FaArrowRight } from "react-icons/fa";
 import { useQueryHandler } from "../hooks/useQuery/UseQuery";
-import { useReduxSelector } from "../hooks/useRedux/useRedux";
+// import { useReduxSelector } from "../hooks/useRedux/useRedux";
 
 interface BlogType {
   _id: string;

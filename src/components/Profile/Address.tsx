@@ -1,7 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie";
 import { message } from "antd";
-import type { AuthType } from "../@types/AuthType"; 
+import type { AuthType } from "../../@types/AuthType";
 
 interface AddressProps {
   user: AuthType | null;
@@ -40,7 +40,6 @@ const Address: React.FC<AddressProps> = ({ user, setUser }) => {
       <h2 className="text-[18px] font-bold text-[#3D3D3D] mb-8">
         Billing Address
       </h2>
-      
 
       <form onSubmit={handleSaveAddress}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">

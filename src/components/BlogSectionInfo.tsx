@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaRegHeart, FaSearch, FaArrowRight } from "react-icons/fa";
 import { useQueryHandler } from "../hooks/useQuery/UseQuery";
-// import { useReduxSelector } from "../hooks/useRedux/useRedux";
 
 interface BlogType {
   _id: string;
@@ -18,7 +17,6 @@ interface BlogType {
 
 const BlogSectionInfo = () => {
   const navigate = useNavigate();
-  // const user = useReduxSelector((state: any) => state.userSlice.user);
   const skeletonArray = [1, 2, 3, 4, 5, 6];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -69,7 +67,6 @@ const BlogSectionInfo = () => {
             <p className="text-gray-500">Latest updates, garden care guides and plant stories.</p>
           </div>
 
-          {/* Qidiruv - Minimalist */}
           <div className="relative w-full md:w-80">
             <input
               type="text"
@@ -83,7 +80,6 @@ const BlogSectionInfo = () => {
           </div>
         </div>
 
-        {/* Bloglar To'plami */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {isSearching || (apiLoading && allBlogs.length === 0) ? (
             skeletonArray.map((_, idx) => (
@@ -105,7 +101,6 @@ const BlogSectionInfo = () => {
                 onClick={() => navigate(`/blog/${blog._id}`)}
                 className="group p-6 border border-gray-100 rounded-md hover:border-[#46a358]/30 hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col h-full bg-white"
               >
-                {/* Tepki qismi: Meta ma'lumotlar */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[10px] font-bold text-[#46a358] uppercase tracking-wider bg-green-50 px-2 py-0.5 rounded-sm">
                     {blog.created_by || "Plant Care"}
@@ -115,7 +110,6 @@ const BlogSectionInfo = () => {
                   </span>
                 </div>
 
-                {/* Sarlavha */}
                 <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#46a358] transition-colors line-clamp-2">
                   {blog.title}
                 </h3>
@@ -125,7 +119,6 @@ const BlogSectionInfo = () => {
                   {blog.short_description || blog.content?.replace(/<[^>]*>/g, '')}
                 </p>
 
-                {/* Pastki qism: Statistika va Link */}
                 <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex items-center gap-4 text-gray-400">
                     <div className="flex items-center gap-1">
